@@ -1,11 +1,11 @@
 import React from 'react';
 
 // Components
-import Navbar from './components/Navbar.js';
+import Toolbar from './components/Toolbar.js';
 
 function App() {
     return (
-        <Navbar />
+        <Toolbar />
     );
 }
 
