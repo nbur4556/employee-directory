@@ -1,10 +1,8 @@
 import React from 'react';
+import './stylesheets/reset.css';
 
 // Components
 import Toolbar from './components/Toolbar.js';
-
-// Stylesheets
-import './stylesheets/reset.css';
 
 function App() {
     return (
