@@ -1,0 +1,31 @@
+@keyframes show-bar{
+    0%      {top: -5rem;}
+    100%    {top: 0rem;}
+}
+
+@keyframes hide-bar{
+    0%      {top: 0rem;}
+    100%    {top: -5rem;}
+}
+
+section{
+    position: relative;
+    
+    height: 3rem;
+    background-color: #C6D8D3;
+
+    z-index: -10;
+    
+}
+
+.show-bar{
+    top: 0rem;
+    animation-name: show-bar;
+    animation-duration: 1s;
+}
+
+.hide-bar{
+    top: -5rem;
+    animation-name: hide-bar;
+    animation-duration: 1s;
+}

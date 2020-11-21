@@ -1,17 +1,24 @@
 import React from 'react';
 import '../stylesheets/toolbar.css';
 
+//Components
+import ToolbarOptions from './ToolbarOptions.js';
+
 const Toolbar = () => {
     return (
-        <nav>
-            <h1>Employee Directory</h1>
+        <header>
+            <nav>
+                <h1>Employee Directory</h1>
 
-            {/* Toolbar Options */}
-            <ul>
-                <li>Sort</li>
-                <li>Filter</li>
-            </ul>
-        </nav>
+                {/* Toolbar Options */}
+                <ul>
+                    <li>Sort</li>
+                    <li>Filter</li>
+                </ul>
+            </nav>
+
+            <ToolbarOptions />
+        </header>
     );
 }
 
