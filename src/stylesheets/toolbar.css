@@ -1,0 +1,29 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #3A3335;
+    padding: 1rem;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 10rem;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+li{
+    font-size: 1.5rem;
+}
+
+h1, li{
+    color: #FDF0D5;
+}

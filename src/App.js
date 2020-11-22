@@ -1,5 +1,14 @@
 import React from 'react';
+import './stylesheets/reset.css';
+import './stylesheets/main.css'
 
-function App() { return (<div></div>); }
+// Components
+import Toolbar from './components/Toolbar.js';
+
+function App() {
+    return (
+        <Toolbar />
+    );
+}
 
 export default App;
