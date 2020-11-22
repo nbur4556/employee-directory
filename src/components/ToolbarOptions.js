@@ -3,7 +3,7 @@ import '../stylesheets/toolbar-options.css';
 
 const ToolbarOptions = props => {
     return (
-        <section className={props.barState}></section>
+        <section className={`toolbar-options ${props.barState}`}></section>
     );
 }
 
