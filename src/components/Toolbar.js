@@ -4,35 +4,37 @@ import '../stylesheets/toolbar.css';
 //Components
 import ToolbarOptions from './ToolbarOptions.js';
 
-const Toolbar = () => {
-    let currentBarState = 'init-bar';
-
-    const toggleBarState = () => {
-        if (currentBarState === 'init-bar' || currentBarState === 'hide-bar') {
-            currentBarState = 'show-bar';
-        }
-        else {
-            currentBarState = 'hide-bar';
-        }
-
-        console.log(currentBarState);
+class Toolbar extends React.Component {
+    state = {
+        barState: 'init-bar'
     }
 
-    return (
-        <header>
-            <nav>
-                <h1>Employee Directory</h1>
+    toggleBarState = () => {
+        if (this.state.barState === 'init-bar' || this.state.barState === 'hide-bar') {
+            this.setState({ barState: 'show-bar' });
+        }
+        else {
+            this.setState({ barState: 'hide-bar' });
+        }
+    }
 
-                {/* Toolbar Options */}
-                <ul>
-                    <li onClick={toggleBarState}>Filter</li>
-                    <li onClick={toggleBarState}>Sort</li>
-                </ul>
-            </nav>
+    render() {
+        return (
+            <header>
+                <nav>
+                    <h1>Employee Directory</h1>
 
-            <ToolbarOptions barState={currentBarState} />
-        </header>
-    );
+                    {/* Toolbar Options */}
+                    <ul>
+                        <li onClick={this.toggleBarState}>Filter</li>
+                        <li onClick={this.toggleBarState}>Sort</li>
+                    </ul>
+                </nav>
+
+                <ToolbarOptions barState={this.state.barState} />
+            </header>
+        );
+    }
 }
 
 export default Toolbar;
