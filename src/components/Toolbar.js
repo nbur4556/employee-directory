@@ -5,6 +5,19 @@ import '../stylesheets/toolbar.css';
 import ToolbarOptions from './ToolbarOptions.js';
 
 const Toolbar = () => {
+    let currentBarState = 'init-bar';
+
+    const toggleBarState = () => {
+        if (currentBarState === 'init-bar' || currentBarState === 'hide-bar') {
+            currentBarState = 'show-bar';
+        }
+        else {
+            currentBarState = 'hide-bar';
+        }
+
+        console.log(currentBarState);
+    }
+
     return (
         <header>
             <nav>
@@ -12,12 +25,12 @@ const Toolbar = () => {
 
                 {/* Toolbar Options */}
                 <ul>
-                    <li>Sort</li>
-                    <li>Filter</li>
+                    <li onClick={toggleBarState}>Filter</li>
+                    <li onClick={toggleBarState}>Sort</li>
                 </ul>
             </nav>
 
-            <ToolbarOptions />
+            <ToolbarOptions barState={currentBarState} />
         </header>
     );
 }

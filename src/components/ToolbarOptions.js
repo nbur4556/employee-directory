@@ -1,9 +1,9 @@
 import React from 'react';
 import '../stylesheets/toolbar-options.css';
 
-const ToolbarOptions = () => {
+const ToolbarOptions = props => {
     return (
-        <section className='init-bar'></section>
+        <section className={props.barState}></section>
     );
 }
 

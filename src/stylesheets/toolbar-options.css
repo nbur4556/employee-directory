@@ -16,16 +16,19 @@ section{
     z-index: -10;
 }
 
+/* Toobar Options initially behind toolbar */
 .init-bar{
     top: -5rem;
 }
 
+/* Toolbar Options slides down from behind Toolbar */
 .show-bar{
     top: 0rem;
     animation-name: show-bar;
     animation-duration: 1s;
 }
 
+/* Toolbar Options slides up behind Toolbar */
 .hide-bar{
     top: -5rem;
     animation-name: hide-bar;
