@@ -3,7 +3,7 @@ import '../stylesheets/toolbar-options.css';
 
 const ToolbarOptions = () => {
     return (
-        <section className='hide-bar'></section>
+        <section className='init-bar'></section>
     );
 }
 
