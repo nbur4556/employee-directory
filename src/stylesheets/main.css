@@ -1,17 +1,24 @@
 :root{
     /* Colors */
-    --color-main-white: #FDF0D5;
-    --color-main-black: #3A3335; 
-    --color-light-primary: #C6D8D3;
+    --color-main-white: #F2E9E4;
+    --color-main-black: #2B2628; 
+    --color-light-primary: #5B85AA;
 
     /* Fonts */
     --font-crimson-text: 'Crimson Text', serif;
 }
 
 body{
-    background-color: #FDF0D5;
+    background-color: var(--color-main-white);
 }
 
 h1, h2, h3, h4, h5, h6{
     font-family: var(--font-crimson-text);
+}
+
+p{
+    color: var(--color-main-black);
+    font-family: var(--font-crimson-text);
+    font-size: 1.2
+    rem;
 }
