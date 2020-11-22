@@ -11,6 +11,21 @@ function App() {
         <article>
             <Toolbar />
 
+            {/* Employee Data */}
+            <EmployeeRow />
+            <EmployeeRow />
+            <EmployeeRow />
+            <EmployeeRow />
+            <EmployeeRow />
+            <EmployeeRow />
+            <EmployeeRow />
+            <EmployeeRow />
+            <EmployeeRow />
+            <EmployeeRow />
+            <EmployeeRow />
+            <EmployeeRow />
+            <EmployeeRow />
+            <EmployeeRow />
             <EmployeeRow />
         </article>
     );
