@@ -12,7 +12,7 @@ section{
     position: relative;
     
     height: 3rem;
-    background-color: #C6D8D3;    
+    background-color: var(--color-light-primary);    
     z-index: -10;
 }
 

@@ -1,7 +1,17 @@
+:root{
+    /* Colors */
+    --color-main-white: #FDF0D5;
+    --color-main-black: #3A3335; 
+    --color-light-primary: #C6D8D3;
+
+    /* Fonts */
+    --font-crimson-text: 'Crimson Text', serif;
+}
+
 body{
     background-color: #FDF0D5;
 }
 
 h1, h2, h3, h4, h5, h6{
-    font-family: 'Crimson Text', serif;
+    font-family: var(--font-crimson-text);
 }
