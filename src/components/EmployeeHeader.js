@@ -4,15 +4,15 @@ import '../stylesheets/employee-row.css';
 const EmployeeHeader = () => {
     return (
         <section className='employee-row'>
-            <p>ID</p>
-            <p>First Name</p>
-            <p>Last Name</p>
-            <p>Position</p>
-            <p>Salary</p>
-            <p>Phone Number</p>
-            <p>Email</p>
-            <p>Address</p>
-            <p>Hire Date</p>
+            <h6>ID</h6>
+            <h6>First Name</h6>
+            <h6>Last Name</h6>
+            <h6>Position</h6>
+            <h6>Salary</h6>
+            <h6>Phone Number</h6>
+            <h6>Email</h6>
+            <h6>Address</h6>
+            <h6>Hire Date</h6>
         </section>
     );
 }
