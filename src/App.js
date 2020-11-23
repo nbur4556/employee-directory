@@ -5,13 +5,19 @@ import './stylesheets/main.css'
 
 // Components
 import Toolbar from './components/Toolbar.js';
-import EmployeeRow from './components/EmployeeRow.js';
+// import EmployeeRow from './components/EmployeeRow.js';
 import EmployeeHeader from './components/EmployeeHeader.js';
 
-
-
 function App() {
-    console.log(employeeData);
+    const renderEmployeeData = () => {
+        // let renderData = ''
+
+        for (const employee of employeeData) {
+            console.log(employee);
+        }
+
+        return (<div></div>);
+    }
 
     return (
         <article>
@@ -19,7 +25,8 @@ function App() {
 
             {/* Employee Data */}
             <EmployeeHeader />
-            <EmployeeRow
+            {renderEmployeeData()}
+            {/* <EmployeeRow
                 employeeId='0'
                 firstName='John'
                 lastName='Doe'
@@ -62,7 +69,7 @@ function App() {
                 email='whthouse@email.gov'
                 address='1 President Av, City, ST 12345'
                 hireDate='01/12/2021'
-            />
+            /> */}
         </article>
     );
 }
