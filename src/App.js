@@ -5,6 +5,7 @@ import './stylesheets/main.css'
 // Components
 import Toolbar from './components/Toolbar.js';
 import EmployeeRow from './components/EmployeeRow.js';
+import EmployeeHeader from './components/EmployeeHeader.js';
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <Toolbar />
 
             {/* Employee Data */}
+            <EmployeeHeader />
             <EmployeeRow
                 employeeId='0'
                 firstName='John'
