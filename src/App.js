@@ -23,7 +23,7 @@ function App() {
                     salary={employee.salary}
                     phoneNumber={employee.phoneNumber}
                     email={employee.email}
-                    address={employee.address}
+                    address={`${employee.address}, ${employee.city}, ${employee.state} ${employee.zip}`}
                     hireDate={employee.hireDate}
                 />);
         }
