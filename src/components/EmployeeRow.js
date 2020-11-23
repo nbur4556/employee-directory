@@ -1,18 +1,18 @@
 import React from 'react';
 import '../stylesheets/employee-row.css';
 
-const EmployeeRow = () => {
+const EmployeeRow = props => {
     return (
         <section className='employee-row'>
-            <p>Employee ID</p>
-            <p>First Name</p>
-            <p>Last Name</p>
-            <p>Position</p>
-            <p>Salary</p>
-            <p>Phone Number</p>
-            <p>Email</p>
-            <p>Address</p>
-            <p>Hire Date</p>
+            <p>{props.employeeId}</p>
+            <p>{props.firstName}</p>
+            <p>{props.lastName}</p>
+            <p>{props.position}</p>
+            <p>{props.salary}</p>
+            <p>{props.phoneNumber}</p>
+            <p>{props.email}</p>
+            <p>{props.address}</p>
+            <p>{props.hireDate}</p>
         </section>
     );
 }
