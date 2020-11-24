@@ -36,6 +36,9 @@ input, select, option, button{
 }
 
 label{
+    margin: 0 .5rem;
+    
     font-family: var( --font-crimson-text);
+    font-size: 1.25rem;
     color: var( --color-main-white);
 }

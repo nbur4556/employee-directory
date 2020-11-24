@@ -6,13 +6,17 @@ import ToolbarOptions from './ToolbarOptions.js';
 
 class Toolbar extends React.Component {
     state = {
-        filterOptionsBar: 'show-bar',
+        filterOptionsBar: 'init-bar',
         sortOptionsBar: 'init-bar',
     }
 
     // Toggles Display Class of ToolbarOptions Component
     toggleBarState = toolbarKey => {
         if (this.state[toolbarKey] === 'init-bar' || this.state[toolbarKey] === 'hide-bar') {
+            // Make sure all optionBars are hidden before showing bar
+            this.setState({ filterOptionsBar: 'hide-bar' });
+            this.setState({ sortOptionsBar: 'hide-bar' });
+
             this.setState({ [toolbarKey]: 'show-bar' });
         }
         else {
@@ -49,13 +53,30 @@ class Toolbar extends React.Component {
                             <option value="hire-date">Hire Date</option>
                         </select>
 
-                        <input type='text' placeholder="Value" />
+                        <input name="filter-value" type='text' placeholder="Value" />
 
                         <button type="submit">Filter</button>
                     </form>
                 </ToolbarOptions>
                 <ToolbarOptions key="2" barState={this.state.sortOptionsBar}>
-                    <p>Hello World</p>
+                    <form>
+                        <label for="sort-by">Sort By</label>
+                        <select name="sort-by">
+                            <option value="id">ID</option>
+                            <option value="first-name">First Name</option>
+                            <option value="last-name">Last Name</option>
+                            <option value="position">Position</option>
+                            <option value="salary">Salary</option>
+                            <option value="phone-number">Phone Number</option>
+                            <option value="email">Email</option>
+                            <option value="address">Address</option>
+                            <option value="hire-date">Hire Date</option>
+                        </select>
+
+                        <input name="filter-value" type='text' placeholder="Value" />
+
+                        <button type="submit">Sort</button>
+                    </form>
                 </ToolbarOptions>
             </header>
         );
