@@ -10,12 +10,8 @@ class Toolbar extends React.Component {
         barState2: 'init-bar',
     }
 
-    toggleBarState = () => {
-        let toolbarKey = 'barState2';
-
-        console.log(this.state[toolbarKey]);
-
-        if (this.state.barState2 === 'init-bar' || this.state.barState2 === 'hide-bar') {
+    toggleBarState = toolbarKey => {
+        if (this.state[toolbarKey] === 'init-bar' || this.state[toolbarKey] === 'hide-bar') {
             this.setState({ [toolbarKey]: 'show-bar' });
         }
         else {
@@ -31,8 +27,8 @@ class Toolbar extends React.Component {
 
                     {/* Toolbar Options */}
                     <ul>
-                        <li onClick={this.toggleBarState}>Filter</li>
-                        <li onClick={this.toggleBarState}>Sort</li>
+                        <li onClick={() => this.toggleBarState('barState1')}>Filter</li>
+                        <li onClick={() => this.toggleBarState('barState2')}>Sort</li>
                     </ul>
                 </nav>
 
