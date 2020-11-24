@@ -48,14 +48,14 @@
     padding: .25rem;
     
     max-width: 6rem;
-    font-family: var( --font-crimson-text);
+    font-family: var( --font-lato);
     background-color: var( --color-main-white);
 }
 
 .toolbar-options form button{
     padding: .25rem;
 
-    font-family: var( --font-crimson-text);
+    font-family: var( --font-lato);
     background-color: var( --color-main-white);
 }
 

@@ -2,11 +2,11 @@
     /* Colors */
     --color-main-white: #F2E9E4;
     --color-main-black: #2B2628; 
-    --color-main-success: #59a96a;
     --color-light-primary: #5B85AA;
 
     /* Fonts */
     --font-crimson-text: 'Crimson Text', serif;
+    --font-lato: 'Lato', sans-serif;
 }
 
 body{
@@ -23,7 +23,7 @@ h6{
 
 p{
     color: var(--color-main-black);
-    font-family: var(--font-crimson-text);
+    font-family: var(--font-lato);
     font-size: 1.2
     rem;
 }
