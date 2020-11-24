@@ -34,3 +34,25 @@
     animation-name: hide-bar;
     animation-duration: 1s;
 }
+
+/* Form Styling */
+.toolbar-options form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 100%;
+}
+
+.toolbar-options form input, .toolbar-options form button{
+    padding: .25rem;
+    
+    font-family: var( --font-crimson-text);
+    background-color: var( --color-main-white);
+}
+
+.toolbar-options form label{
+    font-family: var( --font-crimson-text);
+    color: var( --color-main-white);
+}
