@@ -10,13 +10,19 @@ class Toolbar extends React.Component {
         sortOptionsBar: 'init-bar',
     }
 
+    handleHideAllBars = () => {
+        if (this.state.filterOptionsBar === 'show-bar') {
+            this.setState({ filterOptionsBar: 'hide-bar' });
+        }
+        if (this.state.sortOptionsBar === 'show-bar') {
+            this.setState({ sortOptionsBar: 'hide-bar' });
+        }
+    }
+
     // Toggles Display Class of ToolbarOptions Component
     toggleBarState = toolbarKey => {
         if (this.state[toolbarKey] === 'init-bar' || this.state[toolbarKey] === 'hide-bar') {
-            // Make sure all optionBars are hidden before showing bar
-            this.setState({ filterOptionsBar: 'hide-bar' });
-            this.setState({ sortOptionsBar: 'hide-bar' });
-
+            this.handleHideAllBars();
             this.setState({ [toolbarKey]: 'show-bar' });
         }
         else {
