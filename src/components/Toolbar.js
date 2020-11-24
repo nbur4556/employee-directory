@@ -79,7 +79,10 @@ class Toolbar extends React.Component {
                             <option value="hire-date">Hire Date</option>
                         </select>
 
-                        <input name="filter-value" type='text' placeholder="Value" />
+                        <label for="ascending-value">Ascending</label>
+                        <input name="sort-value" type="radio" value="ascending" />
+                        <label for="descending-value">Descending</label>
+                        <input name="sort-value" type="radio" value="descending" />
 
                         <button type="submit">Sort</button>
                     </form>
