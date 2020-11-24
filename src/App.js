@@ -13,9 +13,10 @@ function App() {
         let renderData = [];
 
         // Creates JSX EmployeeRow component for all employeeData
-        for (const employee of employeeData) {
+        for (const [index, employee] of employeeData.entries()) {
             renderData.push(
                 <EmployeeRow
+                    key={index}
                     employeeId={employee.id}
                     firstName={employee.firstName}
                     lastName={employee.lastName}
