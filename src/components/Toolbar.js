@@ -6,10 +6,11 @@ import ToolbarOptions from './ToolbarOptions.js';
 
 class Toolbar extends React.Component {
     state = {
-        barState1: 'init-bar',
-        barState2: 'init-bar',
+        filterOptionsBar: 'init-bar',
+        sortOptionsBar: 'init-bar',
     }
 
+    // Toggles Display Class of ToolbarOptions Component
     toggleBarState = toolbarKey => {
         if (this.state[toolbarKey] === 'init-bar' || this.state[toolbarKey] === 'hide-bar') {
             this.setState({ [toolbarKey]: 'show-bar' });
@@ -25,15 +26,16 @@ class Toolbar extends React.Component {
                 <nav>
                     <h1>Employee Directory</h1>
 
-                    {/* Toolbar Options */}
                     <ul>
-                        <li onClick={() => this.toggleBarState('barState1')}>Filter</li>
-                        <li onClick={() => this.toggleBarState('barState2')}>Sort</li>
+                        {/* Display Toolbar Options */}
+                        <li onClick={() => this.toggleBarState('filterOptionsBar')}>Filter</li>
+                        <li onClick={() => this.toggleBarState('sortOptionsBar')}>Sort</li>
                     </ul>
                 </nav>
 
-                <ToolbarOptions key="1" barState={this.state.barState1} />
-                <ToolbarOptions key="2" barState={this.state.barState2} />
+                {/* Toolbar Options */}
+                <ToolbarOptions key="1" barState={this.state.filterOptionsBar} />
+                <ToolbarOptions key="2" barState={this.state.sortOptionsBar} />
             </header>
         );
     }
