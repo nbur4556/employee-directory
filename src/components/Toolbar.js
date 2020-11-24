@@ -6,15 +6,20 @@ import ToolbarOptions from './ToolbarOptions.js';
 
 class Toolbar extends React.Component {
     state = {
-        barState: 'init-bar'
+        barState1: 'init-bar',
+        barState2: 'init-bar',
     }
 
     toggleBarState = () => {
-        if (this.state.barState === 'init-bar' || this.state.barState === 'hide-bar') {
-            this.setState({ barState: 'show-bar' });
+        let toolbarKey = 'barState2';
+
+        console.log(this.state[toolbarKey]);
+
+        if (this.state.barState2 === 'init-bar' || this.state.barState2 === 'hide-bar') {
+            this.setState({ [toolbarKey]: 'show-bar' });
         }
         else {
-            this.setState({ barState: 'hide-bar' });
+            this.setState({ [toolbarKey]: 'hide-bar' });
         }
     }
 
@@ -31,7 +36,8 @@ class Toolbar extends React.Component {
                     </ul>
                 </nav>
 
-                <ToolbarOptions barState={this.state.barState} />
+                <ToolbarOptions key="1" barState={this.state.barState1} />
+                <ToolbarOptions key="2" barState={this.state.barState2} />
             </header>
         );
     }
