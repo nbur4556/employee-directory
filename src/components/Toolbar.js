@@ -6,7 +6,7 @@ import ToolbarOptions from './ToolbarOptions.js';
 
 class Toolbar extends React.Component {
     state = {
-        filterOptionsBar: 'init-bar',
+        filterOptionsBar: 'show-bar',
         sortOptionsBar: 'init-bar',
     }
 
@@ -36,7 +36,16 @@ class Toolbar extends React.Component {
                 {/* Toolbar Options */}
                 <ToolbarOptions key="1" barState={this.state.filterOptionsBar}>
                     <form>
-                        <input type="text" placeholder="Text" />
+                        <input name="filter-id" type="text" placeholder="Text" />
+                        <input name="filter-firstName" type="text" placeholder="Text" />
+                        <input name="filter-lastName" type="text" placeholder="Text" />
+                        <input name="filter-position" type="text" placeholder="Text" />
+                        <input name="filter-salary" type="text" placeholder="Text" />
+                        <input name="filter-phoneNumber" type="text" placeholder="Text" />
+                        <input name="filter-email" type="text" placeholder="Text" />
+                        <input name="filter-address" type="text" placeholder="Text" />
+                        <input name="filter-hireDate" type="text" placeholder="Text" />
+                        <button type="submit">Filter</button>
                     </form>
                 </ToolbarOptions>
                 <ToolbarOptions key="2" barState={this.state.sortOptionsBar}>
