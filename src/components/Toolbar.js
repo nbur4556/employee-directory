@@ -34,8 +34,14 @@ class Toolbar extends React.Component {
                 </nav>
 
                 {/* Toolbar Options */}
-                <ToolbarOptions key="1" barState={this.state.filterOptionsBar} />
-                <ToolbarOptions key="2" barState={this.state.sortOptionsBar} />
+                <ToolbarOptions key="1" barState={this.state.filterOptionsBar}>
+                    <form>
+                        <input type="text" placeholder="Text" />
+                    </form>
+                </ToolbarOptions>
+                <ToolbarOptions key="2" barState={this.state.sortOptionsBar}>
+                    <p>Hello World</p>
+                </ToolbarOptions>
             </header>
         );
     }

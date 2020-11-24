@@ -16,7 +16,7 @@
     background-color: var(--color-light-primary);
 }
 
-/* Toobar Options initially behind toolbar */
+/* Toolbar Options initially behind toolbar */
 .init-bar{
     top: 0rem;
 }
