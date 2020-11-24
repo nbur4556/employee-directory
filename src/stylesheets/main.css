@@ -27,3 +27,15 @@ p{
     font-size: 1.2
     rem;
 }
+
+input, select, option, button{
+    margin: 0 .5rem;
+    padding: .25rem;
+    font-family: var( --font-lato);
+    background-color: var( --color-main-white);
+}
+
+label{
+    font-family: var( --font-crimson-text);
+    color: var( --color-main-white);
+}

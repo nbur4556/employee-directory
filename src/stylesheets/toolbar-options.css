@@ -38,28 +38,8 @@
 /* Form Styling */
 .toolbar-options form{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
 
     height: 100%;
-}
-
-.toolbar-options form input{
-    padding: .25rem;
-    
-    max-width: 6rem;
-    font-family: var( --font-lato);
-    background-color: var( --color-main-white);
-}
-
-.toolbar-options form button{
-    padding: .25rem;
-
-    font-family: var( --font-lato);
-    background-color: var( --color-main-white);
-}
-
-.toolbar-options form label{
-    font-family: var( --font-crimson-text);
-    color: var( --color-main-white);
 }
