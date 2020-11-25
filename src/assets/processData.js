@@ -17,17 +17,21 @@ const processData = {
         const dataSorted = data;
         let hasSwitched = false;
 
-        for (let i = 0; i < dataSorted.length; i++) {
-            console.log(dataSorted[i][filterBy]);
+        // Bubble Sort Algorithm
+        do {
+            hasSwitched = false;
 
-            if (i !== dataSorted.length - 1 && dataSorted[i][filterBy] > dataSorted[i + 1][filterBy]) {
-                hasSwitched = true;
-                console.log(hasSwitched);
-                let hold = dataSorted[i];
-                dataSorted[i] = dataSorted[i + 1];
-                dataSorted[i + 1] = hold;
+            for (let i = 0; i < dataSorted.length; i++) {
+
+                // If value is greater than next value, switch 
+                if (i !== dataSorted.length - 1 && dataSorted[i][filterBy] > dataSorted[i + 1][filterBy]) {
+                    hasSwitched = true;
+                    let hold = dataSorted[i];
+                    dataSorted[i] = dataSorted[i + 1];
+                    dataSorted[i + 1] = hold;
+                }
             }
-        }
+        } while (hasSwitched === true);
 
         return dataSorted;
     }
