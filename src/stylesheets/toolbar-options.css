@@ -1,36 +1,45 @@
 @keyframes show-bar{
-    0%      {top: -5rem;}
-    100%    {top: 0rem;}
+    0%      {top: 0rem;}
+    100%    {top: 4rem;}
 }
 
 @keyframes hide-bar{
-    0%      {top: 0rem;}
-    100%    {top: -5rem;}
+    0%      {top: 4rem;}
+    100%    {top: 0rem;}
 }
 
 .toolbar-options{
-    position: relative;
+    position: absolute;
+    padding: 1rem 0;
     
-    height: 3rem;
-    background-color: var(--color-light-primary);    
-    z-index: -10;
+    width: 100%;
+    background-color: var(--color-light-primary);
 }
 
-/* Toobar Options initially behind toolbar */
+/* Toolbar Options initially behind toolbar */
 .init-bar{
-    top: -5rem;
+    top: 0rem;
 }
 
 /* Toolbar Options slides down from behind Toolbar */
 .show-bar{
-    top: 0rem;
+    top: 4rem;
     animation-name: show-bar;
     animation-duration: 1s;
 }
 
 /* Toolbar Options slides up behind Toolbar */
 .hide-bar{
-    top: -5rem;
+    top: 0rem;
     animation-name: hide-bar;
     animation-duration: 1s;
+}
+
+/* Form Styling */
+.toolbar-options form{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    height: 100%;
 }

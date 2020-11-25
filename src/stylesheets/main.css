@@ -6,6 +6,7 @@
 
     /* Fonts */
     --font-crimson-text: 'Crimson Text', serif;
+    --font-lato: 'Lato', sans-serif;
 }
 
 body{
@@ -22,7 +23,22 @@ h6{
 
 p{
     color: var(--color-main-black);
-    font-family: var(--font-crimson-text);
+    font-family: var(--font-lato);
     font-size: 1.2
     rem;
+}
+
+input, select, option, button{
+    margin: 0 .5rem;
+    padding: .25rem;
+    font-family: var( --font-lato);
+    background-color: var( --color-main-white);
+}
+
+label{
+    margin: 0 .5rem;
+    
+    font-family: var( --font-crimson-text);
+    font-size: 1.25rem;
+    color: var( --color-main-white);
 }
