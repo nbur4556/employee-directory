@@ -9,7 +9,7 @@ import EmployeeHeader from './components/EmployeeHeader.js';
 
 //Assets
 import employeeData from './assets/employee-data.json';
-import filterData from './assets/filterArray.js'
+import processData from './assets/filterData.js'
 
 function App() {
     const renderEmployeeData = () => {
@@ -39,12 +39,18 @@ function App() {
         e.preventDefault();
         console.log(filterBy);
         console.log(filterValue);
+
+        const data = processData.filter("Hello Filter Data");
+        console.log(data);
     }
 
     const sortData = (e, sortBy, sortValue) => {
         e.preventDefault();
         console.log(sortBy);
         console.log(sortValue);
+
+        const data = processData.filter("Hello Sort Data");
+        console.log(data);
     }
 
     return (
