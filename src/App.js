@@ -56,8 +56,11 @@ class App extends React.Component {
     handleSortData = (e, sortBy, sortValue) => {
         e.preventDefault();
 
-        const data = processData.sort(employeeData, "id", "ascending");
-        console.log(data);
+        console.log(sortBy);
+        console.log(sortValue);
+
+        const data = processData.sort(employeeData, sortBy, sortValue);
+        this.setState({ employeeTable: this.handleEmployeeTable(data) });
     }
 
     render() {
