@@ -87,6 +87,7 @@ class Toolbar extends React.Component {
                         }}>Filter</button>
                     </form>
                 </ToolbarOptions>
+
                 <ToolbarOptions key="2" barState={this.state.sortOptionsBar}>
                     <form>
                         {/* Sort By Options */}

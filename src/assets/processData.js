@@ -1,4 +1,5 @@
 const processData = {
+    // Return Filtered Array of Data
     filter: function (data, filterBy, filterValue) {
         const dataFiltered = [];
 
@@ -11,8 +12,24 @@ const processData = {
         return dataFiltered;
     },
 
-    sort: function (data) {
-        return data;
+    //Return Sorted Array of Data
+    sort: function (data, filterBy, filterData) {
+        const dataSorted = data;
+        let hasSwitched = false;
+
+        for (let i = 0; i < dataSorted.length; i++) {
+            console.log(dataSorted[i][filterBy]);
+
+            if (i !== dataSorted.length - 1 && dataSorted[i][filterBy] > dataSorted[i + 1][filterBy]) {
+                hasSwitched = true;
+                console.log(hasSwitched);
+                let hold = dataSorted[i];
+                dataSorted[i] = dataSorted[i + 1];
+                dataSorted[i + 1] = hold;
+            }
+        }
+
+        return dataSorted;
     }
 }
 

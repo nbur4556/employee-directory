@@ -55,10 +55,8 @@ class App extends React.Component {
 
     handleSortData = (e, sortBy, sortValue) => {
         e.preventDefault();
-        console.log(sortBy);
-        console.log(sortValue);
 
-        const data = processData.filter("Hello Sort Data");
+        const data = processData.sort(employeeData, "id", "ascending");
         console.log(data);
     }
 
