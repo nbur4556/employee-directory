@@ -61,7 +61,7 @@ class Toolbar extends React.Component {
 
                         <input name="filter-value" type='text' placeholder="Value" />
 
-                        <button type="submit">Filter</button>
+                        <button type="submit" onClick={this.props.filterCB}>Filter</button>
                     </form>
                 </ToolbarOptions>
                 <ToolbarOptions key="2" barState={this.state.sortOptionsBar}>
@@ -84,7 +84,7 @@ class Toolbar extends React.Component {
                         <label htmlFor="descending-value">Descending</label>
                         <input name="sort-value" type="radio" value="descending" />
 
-                        <button type="submit">Sort</button>
+                        <button type="submit" onClick={this.props.sortCB}>Sort</button>
                     </form>
                 </ToolbarOptions>
             </header>

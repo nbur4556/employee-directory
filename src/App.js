@@ -32,9 +32,19 @@ function App() {
         return renderData;
     }
 
+    const filterData = e => {
+        e.preventDefault();
+        console.log("filterData");
+    }
+
+    const sortData = e => {
+        e.preventDefault();
+        console.log("sortData");
+    }
+
     return (
         <article>
-            <Toolbar />
+            <Toolbar filterCB={filterData} sortCB={sortData} />
 
             {/* Employee Data */}
             <EmployeeHeader />
