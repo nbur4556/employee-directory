@@ -104,9 +104,19 @@ class Toolbar extends React.Component {
 
                         {/* Sort Value Options */}
                         <label htmlFor="ascending-value">Ascending</label>
-                        <input name="sort-value" type="radio" value="ascending" />
+                        <input
+                            name="sortValue"
+                            type="radio"
+                            onChange={this.handleChangeInput}
+                            value="ascending"
+                        />
                         <label htmlFor="descending-value">Descending</label>
-                        <input name="sort-value" type="radio" value="descending" />
+                        <input
+                            name="sortValue"
+                            type="radio"
+                            onChange={this.handleChangeInput}
+                            value="descending"
+                        />
 
                         {/* Sort Method Button */}
                         <button type="submit" onClick={event => {
