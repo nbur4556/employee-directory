@@ -49,11 +49,8 @@ class App extends React.Component {
     handleFilterData = (e, filterBy, filterValue) => {
         e.preventDefault();
 
-        console.log(filterBy);
-        console.log(filterValue);
-
         const data = processData.filter(employeeData, filterBy, filterValue);
-        console.log(data);
+        this.setState({ employeeTable: this.handleEmployeeTable(data) });
     }
 
     handleSortData = (e, sortBy, sortValue) => {

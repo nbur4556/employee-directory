@@ -82,6 +82,7 @@ class Toolbar extends React.Component {
 
                         {/* Filter Method Button */}
                         <button type="submit" onClick={event => {
+                            this.handleHideAllBars();
                             this.props.filterCB(event, this.state.filterBy, this.state.filterValue)
                         }}>Filter</button>
                     </form>
@@ -120,6 +121,7 @@ class Toolbar extends React.Component {
 
                         {/* Sort Method Button */}
                         <button type="submit" onClick={event => {
+                            this.handleHideAllBars();
                             this.props.sortCB(event, this.state.sortBy, this.state.sortValue)
                         }}>Sort</button>
                     </form>
