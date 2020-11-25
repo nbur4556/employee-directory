@@ -33,7 +33,14 @@ const processData = {
             }
         } while (hasSwitched === true);
 
-        return dataSorted;
+        if (filterData === 'ascending') {
+            return dataSorted;
+        }
+        else {
+            return dataSorted.reverse();
+        }
+
+
     }
 }
 
