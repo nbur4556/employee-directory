@@ -7,10 +7,10 @@ import ToolbarOptions from './ToolbarOptions.js';
 class Toolbar extends React.Component {
     state = {
         filterOptionsBar: 'init-bar',
-        filterBy: '',
+        filterBy: 'ID',
         filterValue: '',
         sortOptionsBar: 'init-bar',
-        sortBy: '',
+        sortBy: 'ID',
         sortValue: ''
     }
 
@@ -58,8 +58,8 @@ class Toolbar extends React.Component {
                 <ToolbarOptions key="1" barState={this.state.filterOptionsBar}>
                     <form>
                         {/* Filter By Options */}
-                        <label htmlFor="filter-by">Filter By</label>
-                        <select name="filter-by">
+                        <label htmlFor="filterBy">Filter By</label>
+                        <select name="filterBy" onChange={this.handleChangeInput}>
                             <option value="id">ID</option>
                             <option value="first-name">First Name</option>
                             <option value="last-name">Last Name</option>
@@ -89,8 +89,8 @@ class Toolbar extends React.Component {
                 <ToolbarOptions key="2" barState={this.state.sortOptionsBar}>
                     <form>
                         {/* Sort By Options */}
-                        <label htmlFor="sort-by">Sort By</label>
-                        <select name="sort-by">
+                        <label htmlFor="sortBy">Sort By</label>
+                        <select name="sortBy" onChange={this.handleChangeInput}>
                             <option value="id">ID</option>
                             <option value="first-name">First Name</option>
                             <option value="last-name">Last Name</option>
