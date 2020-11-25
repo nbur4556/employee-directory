@@ -49,7 +49,10 @@ class App extends React.Component {
     handleFilterData = (e, filterBy, filterValue) => {
         e.preventDefault();
 
-        const data = processData.filter(employeeData, "id", "5614");
+        console.log(filterBy);
+        console.log(filterValue);
+
+        const data = processData.filter(employeeData, filterBy, filterValue);
         console.log(data);
     }
 
