@@ -1,5 +1,4 @@
 import React from 'react';
-import employeeData from './assets/employee-data.json';
 import './stylesheets/reset.css';
 import './stylesheets/main.css'
 
@@ -7,6 +6,10 @@ import './stylesheets/main.css'
 import Toolbar from './components/Toolbar.js';
 import EmployeeRow from './components/EmployeeRow.js';
 import EmployeeHeader from './components/EmployeeHeader.js';
+
+//Assets
+import employeeData from './assets/employee-data.json';
+import filterData from './assets/filterArray.js'
 
 function App() {
     const renderEmployeeData = () => {
