@@ -9,14 +9,25 @@ import EmployeeHeader from './components/EmployeeHeader.js';
 
 //Assets
 import employeeData from './assets/employee-data.json';
-import processData from './assets/filterData.js'
+import processData from './assets/processData.js'
 
-function App() {
-    const renderEmployeeData = () => {
+class App extends React.Component {
+    state = {
+        employeeTable: ""
+    }
+
+    componentDidMount() {
+        this.setState({
+            employeeTable: this.handleEmployeeTable(employeeData)
+        });
+    }
+
+    // Takes an object of employee data and returns an array of EmployeeRow components 
+    handleEmployeeTable = (data) => {
         let renderData = [];
 
         // Creates JSX EmployeeRow component for all employeeData
-        for (const [index, employee] of employeeData.entries()) {
+        for (const [index, employee] of data.entries()) {
             renderData.push(
                 <EmployeeRow
                     key={index}
@@ -35,7 +46,7 @@ function App() {
         return renderData;
     }
 
-    const filterData = (e, filterBy, filterValue) => {
+    handleFilterData = (e, filterBy, filterValue) => {
         e.preventDefault();
         console.log(filterBy);
         console.log(filterValue);
@@ -44,7 +55,7 @@ function App() {
         console.log(data);
     }
 
-    const sortData = (e, sortBy, sortValue) => {
+    handleSortData = (e, sortBy, sortValue) => {
         e.preventDefault();
         console.log(sortBy);
         console.log(sortValue);
@@ -53,15 +64,17 @@ function App() {
         console.log(data);
     }
 
-    return (
-        <article>
-            <Toolbar filterCB={filterData} sortCB={sortData} />
+    render() {
+        return (
+            <article>
+                <Toolbar filterCB={this.handleFilterData} sortCB={this.handleSortData} />
 
-            {/* Employee Data */}
-            <EmployeeHeader />
-            {renderEmployeeData()}
-        </article>
-    );
+                {/* Employee Data */}
+                <EmployeeHeader />
+                {this.state.employeeTable}
+            </article >
+        );
+    }
 }
 
 export default App;
