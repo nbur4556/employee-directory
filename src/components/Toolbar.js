@@ -34,6 +34,13 @@ class Toolbar extends React.Component {
         }
     }
 
+    handleChangeInput = event => {
+        let name = event.target.name;
+        let value = event.target.value;
+
+        this.setState({ [name]: value });
+    }
+
     render() {
         return (
             <header>
@@ -65,7 +72,13 @@ class Toolbar extends React.Component {
                         </select>
 
                         {/* Filter Value Field */}
-                        <input name="filter-value" type='text' placeholder="Value" />
+                        <input
+                            name="filterValue"
+                            type='text'
+                            onChange={this.handleChangeInput}
+                            value={this.state.filterValue}
+                            placeholder="Value"
+                        />
 
                         {/* Filter Method Button */}
                         <button type="submit" onClick={event => {
