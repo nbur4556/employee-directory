@@ -32,14 +32,16 @@ function App() {
         return renderData;
     }
 
-    const filterData = e => {
+    const filterData = (e, filterBy, filterValue) => {
         e.preventDefault();
-        console.log("filterData");
+        console.log(filterBy);
+        console.log(filterValue);
     }
 
-    const sortData = e => {
+    const sortData = (e, sortBy, sortValue) => {
         e.preventDefault();
-        console.log("sortData");
+        console.log(sortBy);
+        console.log(sortValue);
     }
 
     return (
