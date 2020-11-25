@@ -46,7 +46,7 @@ class Toolbar extends React.Component {
                 {/* Toolbar Options */}
                 <ToolbarOptions key="1" barState={this.state.filterOptionsBar}>
                     <form>
-                        <label for="filter-by">Filter By</label>
+                        <label htmlFor="filter-by">Filter By</label>
                         <select name="filter-by">
                             <option value="id">ID</option>
                             <option value="first-name">First Name</option>
@@ -66,7 +66,7 @@ class Toolbar extends React.Component {
                 </ToolbarOptions>
                 <ToolbarOptions key="2" barState={this.state.sortOptionsBar}>
                     <form>
-                        <label for="sort-by">Sort By</label>
+                        <label htmlFor="sort-by">Sort By</label>
                         <select name="sort-by">
                             <option value="id">ID</option>
                             <option value="first-name">First Name</option>
@@ -79,9 +79,9 @@ class Toolbar extends React.Component {
                             <option value="hire-date">Hire Date</option>
                         </select>
 
-                        <label for="ascending-value">Ascending</label>
+                        <label htmlFor="ascending-value">Ascending</label>
                         <input name="sort-value" type="radio" value="ascending" />
-                        <label for="descending-value">Descending</label>
+                        <label htmlFor="descending-value">Descending</label>
                         <input name="sort-value" type="radio" value="descending" />
 
                         <button type="submit">Sort</button>
