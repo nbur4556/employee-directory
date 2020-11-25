@@ -1,5 +1,4 @@
 import React from 'react';
-import employeeData from './assets/employee-data.json';
 import './stylesheets/reset.css';
 import './stylesheets/main.css'
 
@@ -8,12 +7,27 @@ import Toolbar from './components/Toolbar.js';
 import EmployeeRow from './components/EmployeeRow.js';
 import EmployeeHeader from './components/EmployeeHeader.js';
 
-function App() {
-    const renderEmployeeData = () => {
+//Assets
+import employeeData from './assets/employee-data.json';
+import processData from './assets/processData.js'
+
+class App extends React.Component {
+    state = {
+        employeeTable: ""
+    }
+
+    componentDidMount() {
+        this.setState({
+            employeeTable: this.handleEmployeeTable(employeeData)
+        });
+    }
+
+    // Takes an object of employee data and returns an array of EmployeeRow components 
+    handleEmployeeTable = (data) => {
         let renderData = [];
 
         // Creates JSX EmployeeRow component for all employeeData
-        for (const [index, employee] of employeeData.entries()) {
+        for (const [index, employee] of data.entries()) {
             renderData.push(
                 <EmployeeRow
                     key={index}
@@ -32,27 +46,31 @@ function App() {
         return renderData;
     }
 
-    const filterData = (e, filterBy, filterValue) => {
+    handleFilterData = (e, filterBy, filterValue) => {
         e.preventDefault();
-        console.log(filterBy);
-        console.log(filterValue);
+
+        const data = processData.filter(employeeData, filterBy, filterValue);
+        this.setState({ employeeTable: this.handleEmployeeTable(data) });
     }
 
-    const sortData = (e, sortBy, sortValue) => {
+    handleSortData = (e, sortBy, sortValue) => {
         e.preventDefault();
-        console.log(sortBy);
-        console.log(sortValue);
+
+        const data = processData.sort(employeeData, "id", "ascending");
+        console.log(data);
     }
 
-    return (
-        <article>
-            <Toolbar filterCB={filterData} sortCB={sortData} />
+    render() {
+        return (
+            <article>
+                <Toolbar filterCB={this.handleFilterData} sortCB={this.handleSortData} />
 
-            {/* Employee Data */}
-            <EmployeeHeader />
-            {renderEmployeeData()}
-        </article>
-    );
+                {/* Employee Data */}
+                <EmployeeHeader />
+                {this.state.employeeTable}
+            </article >
+        );
+    }
 }
 
 export default App;

@@ -61,14 +61,14 @@ class Toolbar extends React.Component {
                         <label htmlFor="filterBy">Filter By</label>
                         <select name="filterBy" onChange={this.handleChangeInput}>
                             <option value="id">ID</option>
-                            <option value="first-name">First Name</option>
-                            <option value="last-name">Last Name</option>
+                            <option value="firstName">First Name</option>
+                            <option value="lastName">Last Name</option>
                             <option value="position">Position</option>
                             <option value="salary">Salary</option>
-                            <option value="phone-number">Phone Number</option>
+                            <option value="phoneNumber">Phone Number</option>
                             <option value="email">Email</option>
                             <option value="address">Address</option>
-                            <option value="hire-date">Hire Date</option>
+                            <option value="hireDate">Hire Date</option>
                         </select>
 
                         {/* Filter Value Field */}
@@ -82,10 +82,12 @@ class Toolbar extends React.Component {
 
                         {/* Filter Method Button */}
                         <button type="submit" onClick={event => {
+                            this.handleHideAllBars();
                             this.props.filterCB(event, this.state.filterBy, this.state.filterValue)
                         }}>Filter</button>
                     </form>
                 </ToolbarOptions>
+
                 <ToolbarOptions key="2" barState={this.state.sortOptionsBar}>
                     <form>
                         {/* Sort By Options */}
@@ -120,6 +122,7 @@ class Toolbar extends React.Component {
 
                         {/* Sort Method Button */}
                         <button type="submit" onClick={event => {
+                            this.handleHideAllBars();
                             this.props.sortCB(event, this.state.sortBy, this.state.sortValue)
                         }}>Sort</button>
                     </form>
