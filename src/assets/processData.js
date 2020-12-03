@@ -4,7 +4,7 @@ const processData = {
         const dataFiltered = [];
 
         for (let i = 0; i < data.length; i++) {
-            let fullLocation = `${data[i].location.city} ${data[i].location.state}, ${data[i].location.country}`
+            let fullLocation = `${data[i].location.city} ${data[i].location.state}, ${data[i].nat}`
 
             if (filterBy === "firstName" && data[i].name.first === filterValue) {
                 // Handle First Name
