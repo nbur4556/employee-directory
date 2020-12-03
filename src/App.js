@@ -18,7 +18,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        api(50, response => {
+        api(50, null, response => {
             console.log(response);
         });
 
