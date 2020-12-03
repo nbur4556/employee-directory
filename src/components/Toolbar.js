@@ -61,14 +61,11 @@ class Toolbar extends React.Component {
                         <label htmlFor="filterBy">Filter By</label>
                         <select name="filterBy" onChange={this.handleChangeInput}>
                             <option value="id">ID</option>
-                            <option value="firstName">First Name</option>
-                            <option value="lastName">Last Name</option>
-                            <option value="position">Position</option>
-                            <option value="salary">Salary</option>
-                            <option value="phoneNumber">Phone Number</option>
+                            <option value="name.first">First Name</option>
+                            <option value="name.last">Last Name</option>
+                            <option value="phone">Phone Number</option>
                             <option value="email">Email</option>
                             <option value="address">Address</option>
-                            <option value="hireDate">Hire Date</option>
                         </select>
 
                         {/* Filter Value Field */}
@@ -94,14 +91,11 @@ class Toolbar extends React.Component {
                         <label htmlFor="sortBy">Sort By</label>
                         <select name="sortBy" onChange={this.handleChangeInput}>
                             <option value="id">ID</option>
-                            <option value="firstName">First Name</option>
-                            <option value="lastName">Last Name</option>
-                            <option value="position">Position</option>
-                            <option value="salary">Salary</option>
-                            <option value="phoneNumber">Phone Number</option>
+                            <option value="name.first">First Name</option>
+                            <option value="name.last">Last Name</option>
+                            <option value="phone">Phone Number</option>
                             <option value="email">Email</option>
                             <option value="address">Address</option>
-                            <option value="hireDate">Hire Date</option>
                         </select>
 
                         {/* Sort Value Options */}

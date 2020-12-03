@@ -8,7 +8,6 @@ import EmployeeRow from './components/EmployeeRow.js';
 import EmployeeHeader from './components/EmployeeHeader.js';
 
 //Assets
-import employeeData from './assets/employee-data.json';
 import processData from './assets/processData.js'
 import api from './assets/api.js';
 
@@ -21,7 +20,6 @@ class App extends React.Component {
     componentDidMount() {
         api(50, null, response => {
             console.log(response.results);
-
 
             this.setState({
                 employeeData: response.results,
