@@ -14,16 +14,19 @@ import api from './assets/api.js';
 
 class App extends React.Component {
     state = {
+        employeeData: {},
         employeeTable: ""
     }
 
     componentDidMount() {
         api(50, null, response => {
-            console.log(response);
-        });
+            console.log(response.results);
 
-        this.setState({
-            employeeTable: this.handleEmployeeTable(employeeData)
+
+            this.setState({
+                employeeData: response,
+                employeeTable: this.handleEmployeeTable(response.results)
+            });
         });
     }
 
@@ -36,15 +39,12 @@ class App extends React.Component {
             renderData.push(
                 <EmployeeRow
                     key={index}
-                    employeeId={employee.id}
-                    firstName={employee.firstName}
-                    lastName={employee.lastName}
-                    position={employee.position}
-                    salary={employee.salary}
-                    phoneNumber={employee.phoneNumber}
+                    employeeId={employee.id.value}
+                    firstName={employee.name.first}
+                    lastName={employee.name.last}
+                    phoneNumber={employee.phone}
                     email={employee.email}
-                    address={`${employee.address}, ${employee.city}, ${employee.state} ${employee.zip}`}
-                    hireDate={employee.hireDate}
+                    address={employee.location.city}
                 />);
         }
 
