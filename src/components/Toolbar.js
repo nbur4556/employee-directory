@@ -7,10 +7,10 @@ import ToolbarOptions from './ToolbarOptions.js';
 class Toolbar extends React.Component {
     state = {
         filterOptionsBar: 'init-bar',
-        filterBy: 'id',
+        filterBy: 'firstName',
         filterValue: '',
         sortOptionsBar: 'init-bar',
-        sortBy: 'id',
+        sortBy: 'firstName',
         sortValue: ''
     }
 

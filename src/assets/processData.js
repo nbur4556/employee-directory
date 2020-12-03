@@ -4,7 +4,6 @@ const processData = {
         const dataFiltered = [];
 
         for (let i = 0; i < data.length; i++) {
-
             if (filterBy === "firstName" && data[i].name.first === filterValue) {
                 // Handle First Name
                 dataFiltered.push(data[i]);
@@ -17,7 +16,6 @@ const processData = {
                 // Handle Default
                 dataFiltered.push(data[i]);
             }
-
         }
 
         return dataFiltered;
@@ -33,9 +31,22 @@ const processData = {
             hasSwitched = false;
 
             for (let i = 0; i < dataSorted.length; i++) {
-
-                // If value is greater than next value, switch 
-                if (i !== dataSorted.length - 1 && dataSorted[i][sortBy] > dataSorted[i + 1][sortBy]) {
+                if (sortBy === "firstName" && i !== dataSorted.length - 1 && dataSorted[i].name.first > dataSorted[i + 1].name.first) {
+                    //Handle First Name
+                    hasSwitched = true;
+                    let hold = dataSorted[i];
+                    dataSorted[i] = dataSorted[i + 1];
+                    dataSorted[i + 1] = hold;
+                }
+                else if (sortBy === "lastName" && i !== dataSorted.length - 1 && dataSorted[i].name.last > dataSorted[i + 1].name.last) {
+                    // Handle Last Name
+                    hasSwitched = true;
+                    let hold = dataSorted[i];
+                    dataSorted[i] = dataSorted[i + 1];
+                    dataSorted[i + 1] = hold;
+                }
+                else if (i !== dataSorted.length - 1 && dataSorted[i][sortBy] > dataSorted[i + 1][sortBy]) {
+                    // Handle Default
                     hasSwitched = true;
                     let hold = dataSorted[i];
                     dataSorted[i] = dataSorted[i + 1];
@@ -44,11 +55,11 @@ const processData = {
             }
         } while (hasSwitched === true);
 
-        if (sortData === 'ascending') {
-            return dataSorted;
+        if (sortData === 'descending') {
+            return dataSorted.reverse();
         }
         else {
-            return dataSorted.reverse();
+            return dataSorted
         }
 
     }
