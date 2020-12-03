@@ -4,16 +4,27 @@ const processData = {
         const dataFiltered = [];
 
         for (let i = 0; i < data.length; i++) {
-            if (data[i][filterBy] === filterValue) {
+
+            if (filterBy === "firstName" && data[i].name.first === filterValue) {
+                // Handle First Name
                 dataFiltered.push(data[i]);
             }
+            else if (filterBy === "lastName" && data[i].name.last === filterValue) {
+                // Handle Last Name
+                dataFiltered.push(data[i]);
+            }
+            else if (data[i][filterBy] === filterValue) {
+                // Handle Default
+                dataFiltered.push(data[i]);
+            }
+
         }
 
         return dataFiltered;
     },
 
     //Return Sorted Array of Data
-    sort: function (data, filterBy, filterData) {
+    sort: function (data, sortBy, sortData) {
         const dataSorted = data;
         let hasSwitched = false;
 
@@ -24,7 +35,7 @@ const processData = {
             for (let i = 0; i < dataSorted.length; i++) {
 
                 // If value is greater than next value, switch 
-                if (i !== dataSorted.length - 1 && dataSorted[i][filterBy] > dataSorted[i + 1][filterBy]) {
+                if (i !== dataSorted.length - 1 && dataSorted[i][sortBy] > dataSorted[i + 1][sortBy]) {
                     hasSwitched = true;
                     let hold = dataSorted[i];
                     dataSorted[i] = dataSorted[i + 1];
@@ -33,13 +44,12 @@ const processData = {
             }
         } while (hasSwitched === true);
 
-        if (filterData === 'ascending') {
+        if (sortData === 'ascending') {
             return dataSorted;
         }
         else {
             return dataSorted.reverse();
         }
-
 
     }
 }

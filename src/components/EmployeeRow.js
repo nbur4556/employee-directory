@@ -4,7 +4,6 @@ import '../stylesheets/employee-row.css';
 const EmployeeRow = props => {
     return (
         <section className='employee-row'>
-            <p>{props.employeeId}</p>
             <p>{props.firstName}</p>
             <p>{props.lastName}</p>
             <p>{props.phoneNumber}</p>

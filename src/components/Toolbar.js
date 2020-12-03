@@ -60,9 +60,8 @@ class Toolbar extends React.Component {
                         {/* Filter By Options */}
                         <label htmlFor="filterBy">Filter By</label>
                         <select name="filterBy" onChange={this.handleChangeInput}>
-                            <option value="id">ID</option>
-                            <option value="name.first">First Name</option>
-                            <option value="name.last">Last Name</option>
+                            <option value="firstName">First Name</option>
+                            <option value="lastName">Last Name</option>
                             <option value="phone">Phone Number</option>
                             <option value="email">Email</option>
                             <option value="address">Address</option>
@@ -90,9 +89,8 @@ class Toolbar extends React.Component {
                         {/* Sort By Options */}
                         <label htmlFor="sortBy">Sort By</label>
                         <select name="sortBy" onChange={this.handleChangeInput}>
-                            <option value="id">ID</option>
-                            <option value="name.first">First Name</option>
-                            <option value="name.last">Last Name</option>
+                            <option value="firstName">First Name</option>
+                            <option value="lastName">Last Name</option>
                             <option value="phone">Phone Number</option>
                             <option value="email">Email</option>
                             <option value="address">Address</option>

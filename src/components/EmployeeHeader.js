@@ -4,7 +4,6 @@ import '../stylesheets/employee-row.css';
 const EmployeeHeader = () => {
     return (
         <section className='employee-row'>
-            <h6>ID</h6>
             <h6>First Name</h6>
             <h6>Last Name</h6>
             <h6>Phone Number</h6>

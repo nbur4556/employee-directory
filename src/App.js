@@ -37,7 +37,6 @@ class App extends React.Component {
             renderData.push(
                 <EmployeeRow
                     key={index}
-                    employeeId={employee.id.value}
                     firstName={employee.name.first}
                     lastName={employee.name.last}
                     phoneNumber={employee.phone}
