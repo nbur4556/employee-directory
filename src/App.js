@@ -24,7 +24,7 @@ class App extends React.Component {
 
 
             this.setState({
-                employeeData: response,
+                employeeData: response.results,
                 employeeTable: this.handleEmployeeTable(response.results)
             });
         });
@@ -54,14 +54,14 @@ class App extends React.Component {
     handleFilterData = (e, filterBy, filterValue) => {
         e.preventDefault();
 
-        const data = processData.filter(employeeData, filterBy, filterValue);
+        const data = processData.filter(this.state.employeeData, filterBy, filterValue);
         this.setState({ employeeTable: this.handleEmployeeTable(data) });
     }
 
     handleSortData = (e, sortBy, sortValue) => {
         e.preventDefault();
 
-        const data = processData.sort(employeeData, sortBy, sortValue);
+        const data = processData.sort(this.state.employeeData, sortBy, sortValue);
         this.setState({ employeeTable: this.handleEmployeeTable(data) });
     }
 
