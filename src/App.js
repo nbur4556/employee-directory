@@ -10,6 +10,7 @@ import EmployeeHeader from './components/EmployeeHeader.js';
 //Assets
 import employeeData from './assets/employee-data.json';
 import processData from './assets/processData.js'
+import api from './assets/api.js';
 
 class App extends React.Component {
     state = {
@@ -17,6 +18,10 @@ class App extends React.Component {
     }
 
     componentDidMount() {
+        api(response => {
+            console.log(response);
+        });
+
         this.setState({
             employeeTable: this.handleEmployeeTable(employeeData)
         });

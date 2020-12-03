@@ -1,7 +1,8 @@
-const api = () => {
+const api = cb => {
     fetch('https://randomuser.me/api/')
-        .then(response => {
-            console.log(response);
+        .then(response => response.json())
+        .then(data => {
+            cb(data);
         });
 }
 
