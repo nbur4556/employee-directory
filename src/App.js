@@ -41,7 +41,7 @@ class App extends React.Component {
                     lastName={employee.name.last}
                     phoneNumber={employee.phone}
                     email={employee.email}
-                    address={employee.location.city}
+                    location={`${employee.location.city} ${employee.location.state}, ${employee.location.country}`}
                 />);
         }
 

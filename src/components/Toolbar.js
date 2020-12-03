@@ -64,7 +64,7 @@ class Toolbar extends React.Component {
                             <option value="lastName">Last Name</option>
                             <option value="phone">Phone Number</option>
                             <option value="email">Email</option>
-                            <option value="address">Address</option>
+                            <option value="location">Location</option>
                         </select>
 
                         {/* Filter Value Field */}
@@ -93,7 +93,7 @@ class Toolbar extends React.Component {
                             <option value="lastName">Last Name</option>
                             <option value="phone">Phone Number</option>
                             <option value="email">Email</option>
-                            <option value="address">Address</option>
+                            <option value="location">Location</option>
                         </select>
 
                         {/* Sort Value Options */}

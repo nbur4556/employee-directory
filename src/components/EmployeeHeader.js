@@ -8,7 +8,7 @@ const EmployeeHeader = () => {
             <h6>Last Name</h6>
             <h6>Phone Number</h6>
             <h6>Email</h6>
-            <h6>Address</h6>
+            <h6>Location</h6>
         </section>
     );
 }

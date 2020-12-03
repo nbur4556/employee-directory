@@ -8,7 +8,7 @@ const EmployeeRow = props => {
             <p>{props.lastName}</p>
             <p>{props.phoneNumber}</p>
             <p>{props.email}</p>
-            <p>{props.address}</p>
+            <p>{props.location}</p>
         </section>
     );
 }
