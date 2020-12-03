@@ -8,17 +8,23 @@ import EmployeeRow from './components/EmployeeRow.js';
 import EmployeeHeader from './components/EmployeeHeader.js';
 
 //Assets
-import employeeData from './assets/employee-data.json';
 import processData from './assets/processData.js'
+import api from './assets/api.js';
 
 class App extends React.Component {
     state = {
+        employeeData: {},
         employeeTable: ""
     }
 
     componentDidMount() {
-        this.setState({
-            employeeTable: this.handleEmployeeTable(employeeData)
+        api(50, null, response => {
+            console.log(response.results);
+
+            this.setState({
+                employeeData: response.results,
+                employeeTable: this.handleEmployeeTable(response.results)
+            });
         });
     }
 
@@ -31,15 +37,11 @@ class App extends React.Component {
             renderData.push(
                 <EmployeeRow
                     key={index}
-                    employeeId={employee.id}
-                    firstName={employee.firstName}
-                    lastName={employee.lastName}
-                    position={employee.position}
-                    salary={employee.salary}
-                    phoneNumber={employee.phoneNumber}
+                    firstName={employee.name.first}
+                    lastName={employee.name.last}
+                    phoneNumber={employee.phone}
                     email={employee.email}
-                    address={`${employee.address}, ${employee.city}, ${employee.state} ${employee.zip}`}
-                    hireDate={employee.hireDate}
+                    location={`${employee.location.city} ${employee.location.state}, ${employee.nat}`}
                 />);
         }
 
@@ -49,14 +51,14 @@ class App extends React.Component {
     handleFilterData = (e, filterBy, filterValue) => {
         e.preventDefault();
 
-        const data = processData.filter(employeeData, filterBy, filterValue);
+        const data = processData.filter(this.state.employeeData, filterBy, filterValue);
         this.setState({ employeeTable: this.handleEmployeeTable(data) });
     }
 
     handleSortData = (e, sortBy, sortValue) => {
         e.preventDefault();
 
-        const data = processData.sort(employeeData, sortBy, sortValue);
+        const data = processData.sort(this.state.employeeData, sortBy, sortValue);
         this.setState({ employeeTable: this.handleEmployeeTable(data) });
     }
 
